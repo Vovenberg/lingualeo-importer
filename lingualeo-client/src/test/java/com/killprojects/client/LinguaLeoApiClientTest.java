@@ -9,6 +9,8 @@ import com.killprojects.client.service.LinguaLeoApiClient;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 
 import java.util.List;
@@ -16,14 +18,17 @@ import java.util.List;
 /**
  * Created by vladimir on 02.03.2018.
  */
+@SpringBootTest
 public class LinguaLeoApiClientTest {
 
+    @Autowired
+    private LinguaLeoApiClient linguaLeoApiClient;
 
     @Test
     @DisplayName("simple checking translation word Treasure")
     void successGetWordTranslations() throws UnknownException, HttpRequestException {
         GetTranslationsResponse translationsResponse =
-                new LinguaLeoApiClient().getTranslations("treasure", HttpPropertyContext.empty());
+                linguaLeoApiClient.getTranslations("treasure", HttpPropertyContext.empty());
 
         Assertions.assertAll("check response",
                 () -> Assertions.assertNotNull(translationsResponse),

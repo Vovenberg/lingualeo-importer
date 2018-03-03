@@ -1,5 +1,7 @@
 package com.killprojects.client.controller;
 
+import com.killprojects.common.Result;
+import com.killprojects.client.dto.GetTranslationsResponse;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +45,10 @@ class SimpleRestControllerTest {
 
     @Test
     void getTranslationsResponse() {
+        Result<GetTranslationsResponse> result = Result.success(new GetTranslationsResponse());
+
+        result.ifSuccess(System.out::println)
+                .ifError(System.out::println);
     }
 
 }

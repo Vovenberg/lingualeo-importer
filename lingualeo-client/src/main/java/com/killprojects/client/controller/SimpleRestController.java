@@ -1,6 +1,6 @@
 package com.killprojects.client.controller;
 
-import com.killprojects.Result;
+import com.killprojects.common.Result;
 import com.killprojects.client.ApiClient;
 import com.killprojects.client.HttpPropertyContext;
 import com.killprojects.client.dto.GetTranslationsResponse;
