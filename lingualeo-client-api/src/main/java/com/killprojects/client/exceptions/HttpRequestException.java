@@ -6,6 +6,6 @@ package com.killprojects.client.exceptions;
 public class HttpRequestException extends Exception {
 
     public HttpRequestException(Throwable cause) {
-        super(cause);
+        super("Http request error", cause);
     }
 }

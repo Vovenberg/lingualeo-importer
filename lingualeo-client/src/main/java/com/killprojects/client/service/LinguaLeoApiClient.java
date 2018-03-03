@@ -1,4 +1,4 @@
-package com.killprojects.client;
+package com.killprojects.client.service;
 
 import com.alibaba.fastjson.JSON;
 import com.killprojects.client.ApiClient;
@@ -16,6 +16,7 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.methods.RequestBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,6 +24,7 @@ import java.io.InputStream;
 /**
  * Created by vladimir on 02.03.2018.
  */
+@Service
 public class LinguaLeoApiClient implements ApiClient {
 
     private static final String AUTH_URL = "http://api.lingualeo.com/api/login";

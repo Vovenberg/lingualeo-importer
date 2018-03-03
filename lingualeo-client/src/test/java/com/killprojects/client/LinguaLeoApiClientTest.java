@@ -5,9 +5,11 @@ import com.killprojects.client.dto.GetTranslationsResponse;
 import com.killprojects.client.dto.WordTranslation;
 import com.killprojects.client.exceptions.HttpRequestException;
 import com.killprojects.client.exceptions.UnknownException;
+import com.killprojects.client.service.LinguaLeoApiClient;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
 
 import java.util.List;
 

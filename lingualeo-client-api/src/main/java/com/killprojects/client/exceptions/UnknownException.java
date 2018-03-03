@@ -6,6 +6,6 @@ package com.killprojects.client.exceptions;
 public class UnknownException extends Exception {
 
     public UnknownException(Throwable cause) {
-        super(cause);
+        super("Unknown internal error", cause);
     }
 }
