@@ -1,0 +1,48 @@
+allprojects {
+    ext {
+        commonsCollections = '3.4'
+        guava = '24.0-jre'
+        fastJson = '1.2.46'
+        apacheHttpcomponents = '4.5.5'
+    }
+}
+
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+
+    ext {
+        springBootVersion = '2.0.0.RELEASE'
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+    }
+}
+
+
+
+subprojects {
+    group = 'com.killprojects'
+    version = '1.0-SNAPSHOT'
+
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile "com.alibaba:fastjson:${fastJson}"
+        compile "org.apache.commons:commons-lang3:${commonsCollections}"
+        compile "com.google.guava:guava:${guava}"
+
+    }
+
+}
+

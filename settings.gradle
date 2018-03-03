@@ -1,0 +1,6 @@
+rootProject.name = 'lingualeo-importer'
+include 'lingualeo-client'
+include 'google-translate-retriever'
+include 'yandex-translate-retriever'
+include 'importer-common'
+include 'lingualeo-client-api'

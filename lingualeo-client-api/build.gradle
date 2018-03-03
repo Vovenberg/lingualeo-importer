@@ -1,0 +1,7 @@
+
+
+dependencies {
+    compile project(':importer-common')
+    compile "com.alibaba:fastjson:${fastJson}"
+
+}
