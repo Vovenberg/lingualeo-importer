@@ -9,29 +9,22 @@ import java.util.function.Consumer;
  */
 public class Error implements Serializable {
 
-    private ErrorType errorType;
-    private final Throwable throwable;
+    private final InternalSystemException exception;
 
-    private Error(ErrorType errorType, Throwable throwable) {
-        this.errorType = errorType;
-        this.throwable = throwable;
+    private Error(InternalSystemException exception) {
+        this.exception = exception;
     }
 
-    public static Error is(ErrorType errorType, Throwable throwable) {
+    public static Error is(InternalSystemException throwable) {
         Objects.requireNonNull(throwable);
-        Objects.requireNonNull(errorType);
-        return new Error(errorType, throwable);
+        return new Error(throwable);
     }
 
-    public Throwable getException() {
-        return throwable;
+    public InternalSystemException getException() {
+        return exception;
     }
 
-    public ErrorType getErrorType() {
-        return errorType;
-    }
-
-    public void process(Consumer<Throwable> func) {
-        func.accept(throwable);
+    public void process(Consumer<InternalSystemException> func) {
+        func.accept(exception);
     }
 }

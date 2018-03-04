@@ -1,10 +1,11 @@
-package com.killprojects.client;
+package com.killprojects.client.common;
 
-import com.killprojects.client.dto.AddWordResponse;
-import com.killprojects.client.dto.AuthResponse;
-import com.killprojects.client.dto.GetTranslationsResponse;
-import com.killprojects.client.exceptions.HttpRequestException;
-import com.killprojects.client.exceptions.UnknownException;
+import com.killprojects.client.common.dto.AddWordResponse;
+import com.killprojects.client.common.dto.AuthResponse;
+import com.killprojects.client.common.dto.GetTranslationsResponse;
+import com.killprojects.client.common.exceptions.ClientErrors;
+import com.killprojects.client.common.exceptions.ClientErrors.HttpRequestException;
+import com.killprojects.client.common.exceptions.ClientErrors.UnknownException;
 
 /**
  * Created by vladimir on 02.03.2018.

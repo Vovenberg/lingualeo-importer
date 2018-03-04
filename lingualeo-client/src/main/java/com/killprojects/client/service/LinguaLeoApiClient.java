@@ -1,14 +1,14 @@
 package com.killprojects.client.service;
 
 import com.alibaba.fastjson.JSON;
-import com.killprojects.client.ApiClient;
-import com.killprojects.client.HttpPropertyContext;
-import com.killprojects.client.dto.AddWordResponse;
-import com.killprojects.client.dto.ApiResponse;
-import com.killprojects.client.dto.AuthResponse;
-import com.killprojects.client.dto.GetTranslationsResponse;
-import com.killprojects.client.exceptions.HttpRequestException;
-import com.killprojects.client.exceptions.UnknownException;
+import com.killprojects.client.common.ApiClient;
+import com.killprojects.client.common.HttpPropertyContext;
+import com.killprojects.client.common.dto.AddWordResponse;
+import com.killprojects.client.common.dto.ApiResponse;
+import com.killprojects.client.common.dto.AuthResponse;
+import com.killprojects.client.common.dto.GetTranslationsResponse;
+import com.killprojects.client.common.exceptions.ClientErrors.HttpRequestException;
+import com.killprojects.client.common.exceptions.ClientErrors.UnknownException;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;

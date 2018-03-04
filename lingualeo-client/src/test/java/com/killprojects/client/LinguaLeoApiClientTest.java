@@ -1,10 +1,9 @@
 package com.killprojects.client;
 
 
-import com.killprojects.client.dto.GetTranslationsResponse;
-import com.killprojects.client.dto.WordTranslation;
-import com.killprojects.client.exceptions.HttpRequestException;
-import com.killprojects.client.exceptions.UnknownException;
+import com.killprojects.client.common.HttpPropertyContext;
+import com.killprojects.client.common.dto.GetTranslationsResponse;
+import com.killprojects.client.common.dto.WordTranslation;
 import com.killprojects.client.service.LinguaLeoApiClient;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

@@ -1,7 +1,7 @@
 package com.killprojects.client.controller;
 
 import com.killprojects.common.Result;
-import com.killprojects.client.dto.GetTranslationsResponse;
+import com.killprojects.client.common.dto.GetTranslationsResponse;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @ContextConfiguration
 @WebAppConfiguration
-class SimpleRestControllerTest {
+class BaseRestControllerTest {
 
     @Autowired
     private WebApplicationContext context;

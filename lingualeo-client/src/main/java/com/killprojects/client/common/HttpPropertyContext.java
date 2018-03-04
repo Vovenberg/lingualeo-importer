@@ -1,4 +1,4 @@
-package com.killprojects.client;
+package com.killprojects.client.common;
 
 import java.util.Optional;
 

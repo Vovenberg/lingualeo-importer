@@ -1,4 +1,4 @@
-package com.killprojects.client.dto;
+package com.killprojects.client.common.dto;
 
 import com.alibaba.fastjson.annotation.JSONField;
 

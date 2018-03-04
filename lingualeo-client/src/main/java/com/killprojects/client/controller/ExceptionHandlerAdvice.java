@@ -1,6 +1,5 @@
 package com.killprojects.client.controller;
 
-import com.killprojects.client.exceptions.HttpRequestException;
 import com.killprojects.common.Error;
 import com.killprojects.common.Result;
 import org.springframework.http.HttpStatus;

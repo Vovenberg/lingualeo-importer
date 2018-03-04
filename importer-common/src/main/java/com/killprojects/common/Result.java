@@ -25,7 +25,7 @@ public final class Result<T> implements Serializable {
         return new Result<>(result, true, null);
     }
 
-    public static Result error(Error error) {
+    public static <T> Result<T> error(Error error) {
         Objects.requireNonNull(error);
         return new Result<>(null, false, error);
     }
