@@ -1,5 +1,8 @@
 package com.killprojects.client.controller;
 
+import com.killprojects.client.common.exceptions.ClientErrors;
+import com.killprojects.client.service.session.SessionLeoApiClient;
+import com.killprojects.common.InternalSystemException;
 import com.killprojects.common.Result;
 import com.killprojects.client.common.ApiClient;
 import com.killprojects.client.common.HttpPropertyContext;
@@ -26,14 +29,14 @@ public class BaseRestController {
 
     @GetMapping(path = "getTranslations")
     public Result<GetTranslationsResponse> getTranslationsResponse(@RequestParam(value = "word") String word)
-            throws UnknownException, HttpRequestException {
+            throws InternalSystemException {
 
         GetTranslationsResponse translationsResponse = linguaLeoApiClient.getTranslations(word, HttpPropertyContext.empty());
         return Result.success(translationsResponse);
     }
 
     @Autowired
-    public void setLinguaLeoApiClient(ApiClient linguaLeoApiClient) {
+    public void setLinguaLeoApiClient(SessionLeoApiClient linguaLeoApiClient) {
         this.linguaLeoApiClient = linguaLeoApiClient;
     }
 }

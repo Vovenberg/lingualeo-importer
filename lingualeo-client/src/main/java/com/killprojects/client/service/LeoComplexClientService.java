@@ -17,17 +17,16 @@ import static com.killprojects.common.ResultHandler.handleResult;
  * Created by vladimir on 04.03.2018.
  */
 @Service
-public class ComplexClientApiService extends AbstractClientApiService implements ComplexClientApi {
+public class LeoComplexClientService implements ComplexClientApi {
 
 
     @Autowired
-    private LinguaLeoApiClient client;
+    private LeoApiClient client;
 
     @Override
     public Result<Boolean> auth(String login, String password) {
         return handleResult(() -> {
                     AuthResponse authResponse = client.auth(login, password, HttpPropertyContext.empty());
-                    saveSession(new SessionId(), new SessionContext());
                     return true;
                 },
                 System.out::println

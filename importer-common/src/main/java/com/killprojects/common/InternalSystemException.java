@@ -17,4 +17,7 @@ public class InternalSystemException extends Exception {
         this.code = code;
     }
 
+    public int getCode() {
+        return code;
+    }
 }

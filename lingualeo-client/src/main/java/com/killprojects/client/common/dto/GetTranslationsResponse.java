@@ -5,7 +5,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GetTranslationsResponse implements ApiResponse {
+public class GetTranslationsResponse extends AbsractSessionApiResponse {
     @JSONField(name = "error_msg")
     private String errorMsg;
     @JSONField(name = "is_user")

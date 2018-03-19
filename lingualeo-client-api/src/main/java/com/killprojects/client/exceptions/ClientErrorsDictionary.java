@@ -7,7 +7,8 @@ public enum ClientErrorsDictionary {
     HTTP_ERROR(1, "Http error"),
     JSON_PARSE_ERROR(2, "Json parse error"),
     ALREADY_AUTHENTIFACATED(3, "Authentification already accomplished"),
-    UNKNOWN_ERROR(4, "Unknown internal error");
+    UNKNOWN_ERROR(4, "Unknown internal error"),
+    NONE_AUTHENTIFACATED_REQUEST(5, "NONE_AUTHENTIFACATED_REQUEST");
 
     private int code;
     private String message;
