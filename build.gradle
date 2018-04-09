@@ -41,6 +41,7 @@ subprojects {
         compile "com.alibaba:fastjson:${fastJson}"
         compile "org.apache.commons:commons-lang3:${commonsCollections}"
         compile "com.google.guava:guava:${guava}"
+        compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
 
     }
 

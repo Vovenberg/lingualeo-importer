@@ -8,6 +8,6 @@ import com.killprojects.common.Result;
  */
 public interface SmartClientApi extends AuthClientApi {
 
-    Result<Word> smartAddWord(String word, SelectionType selectionType);
+    Result<Word> smartAddWord(String word, SelectionType selectionType, Long sessionId);
 
 }

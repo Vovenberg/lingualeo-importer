@@ -5,6 +5,7 @@ import com.killprojects.client.common.dto.SessionId;
 import com.killprojects.common.InternalSystemException;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -18,7 +19,7 @@ public class SessionStorage {
 
     private AtomicLong idCounter = new AtomicLong(1);
 
-    private ConcurrentHashMap<Long, SessionContext> sessions = new ConcurrentHashMap<>();
+    private Map<Long, SessionContext> sessions = new ConcurrentHashMap<>();
 
     public long saveSession(SessionContext context) {
         long key = idCounter.incrementAndGet();

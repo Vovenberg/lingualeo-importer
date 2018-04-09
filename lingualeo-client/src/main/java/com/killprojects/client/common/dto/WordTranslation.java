@@ -1,7 +1,9 @@
 package com.killprojects.client.common.dto;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import lombok.Data;
 
+@Data
 public class WordTranslation {
     private Integer id;
     private String value;
@@ -9,36 +11,4 @@ public class WordTranslation {
     @JSONField(name = "is_user")
     private Integer isUser;
 
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    public Integer getVotes() {
-        return votes;
-    }
-
-    public void setVotes(Integer votes) {
-        this.votes = votes;
-    }
-
-    public Integer getIsUser() {
-        return isUser;
-    }
-
-    public void setIsUser(Integer isUser) {
-        this.isUser = isUser;
-    }
 }

@@ -2,7 +2,7 @@ package com.killprojects.client.service;
 
 
 import com.killprojects.client.App;
-import com.killprojects.client.common.HttpPropertyContext;
+import com.killprojects.client.common.contexts.HttpPropertyContext;
 import com.killprojects.client.common.dto.AddWordResponse;
 import com.killprojects.client.common.dto.AuthResponse;
 import com.killprojects.client.common.dto.GetTranslationsResponse;
@@ -26,7 +26,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = App.class)
-class LeoApiClientTest {
+public class LeoApiClientTest {
 
     @Autowired
     private LeoApiClient leoApiClient;
@@ -36,7 +36,7 @@ class LeoApiClientTest {
     @DisplayName("simple checking translation word Treasure")
     void successGetWordTranslations() throws InternalSystemException {
         HttpPropertyContext propertyContext = HttpPropertyContext.builder()
-                .setSessionId(10L)
+                .sesionId(10L)
                 .build();
 
         GetTranslationsResponse translationsResponse =
@@ -52,7 +52,7 @@ class LeoApiClientTest {
                 },
                 () -> {
                     //check other values in response
-                    assertTrue(translationsResponse.getErrorMsg().isEmpty());
+                    assertTrue(translationsResponse.getErrorMessage().isEmpty());
                 });
     }
 
@@ -65,7 +65,7 @@ class LeoApiClientTest {
         Assertions.assertAll("check response",
                 () -> assertNotNull(authResponse),
                 () -> {
-                    assertTrue(Strings.isEmpty(authResponse.getError_msg()));
+                    assertTrue(Strings.isEmpty(authResponse.getErrorMessage()));
                     assertNotNull(authResponse.getUser());
                 });
     }
@@ -75,12 +75,12 @@ class LeoApiClientTest {
     void successAddWord() throws InternalSystemException {
         AddWordResponse response = leoApiClient.addWord("vanish",
                 "werwerw", "sdfsdf", HttpPropertyContext.builder()
-                        .setSessionId(20L).build());
+                        .sesionId(20L).build());
 
         Assertions.assertAll("check response",
                 () -> assertNotNull(response),
                 () -> {
-                    assertTrue(Strings.isEmpty(response.getError_msg()));
+                    assertTrue(Strings.isEmpty(response.getErrorMessage()));
 
                 });
     }

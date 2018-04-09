@@ -1,7 +1,7 @@
 package com.killprojects.client.service.session;
 
 import com.killprojects.client.common.ApiClient;
-import com.killprojects.client.common.HttpPropertyContext;
+import com.killprojects.client.common.contexts.HttpPropertyContext;
 import com.killprojects.client.common.dto.AddWordResponse;
 import com.killprojects.client.common.dto.AuthResponse;
 import com.killprojects.client.common.dto.GetTranslationsResponse;

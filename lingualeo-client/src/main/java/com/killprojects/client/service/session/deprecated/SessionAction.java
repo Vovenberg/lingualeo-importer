@@ -1,6 +1,6 @@
 package com.killprojects.client.service.session.deprecated;
 
-import com.killprojects.client.common.HttpPropertyContext;
+import com.killprojects.client.common.contexts.HttpPropertyContext;
 import com.killprojects.client.common.dto.AuthResponse;
 
 public enum SessionAction {

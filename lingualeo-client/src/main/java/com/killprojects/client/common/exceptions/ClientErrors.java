@@ -28,6 +28,20 @@ public final class ClientErrors {
         }
     }
 
+    public static class UnknownAuthorizedException extends InternalSystemException {
+
+        public UnknownAuthorizedException(String message) {
+            super(UNKNOWN_ERROR.getCode(), message);
+        }
+    }
+
+    public static class UnknownAddWordException extends InternalSystemException {
+
+        public UnknownAddWordException(String message) {
+            super(UNKNOWN_ERROR.getCode(), message);
+        }
+    }
+
     public static class NonAuthorizedRequest extends InternalSystemException {
 
         public NonAuthorizedRequest() {

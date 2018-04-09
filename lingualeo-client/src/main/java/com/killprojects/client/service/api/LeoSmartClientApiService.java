@@ -2,9 +2,9 @@ package com.killprojects.client.service.api;
 
 import com.killprojects.client.SelectionType;
 import com.killprojects.client.SmartClientApi;
+import com.killprojects.client.common.SmartClientService;
+import com.killprojects.client.dto.User;
 import com.killprojects.client.dto.Word;
-import com.killprojects.client.service.LeoComplexClientService;
-import com.killprojects.client.service.LeoSmartClientService;
 import com.killprojects.common.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,16 +17,22 @@ import static com.killprojects.common.ResultHandler.handleResult;
 @Service
 public class LeoSmartClientApiService implements SmartClientApi {
 
-    @Autowired
-    private LeoSmartClientService smartClientService;
+    private final SmartClientService smartClientService;
 
-    @Override
-    public Result<Boolean> auth(String login, String password) {
-        return handleResult(() -> smartClientService.auth(login, password), System.out::println);
+    @Autowired
+    public LeoSmartClientApiService(SmartClientService smartClientService) {
+        this.smartClientService = smartClientService;
     }
 
     @Override
-    public Result<Word> smartAddWord(String word, SelectionType selectionType) {
-        return handleResult(() -> smartClientService.smartAddWord(word, selectionType), System.out::println);
+    public Result<User> auth(String login, String password) {
+        return handleResult(() -> smartClientService.auth(login, password).getRight(),
+                System.out::println);
+    }
+
+    @Override
+    public Result<Word> smartAddWord(String word, SelectionType selectionType, Long sessionId) {
+        return handleResult(() -> smartClientService.smartAddWord(word, selectionType, sessionId),
+                System.out::println);
     }
 }

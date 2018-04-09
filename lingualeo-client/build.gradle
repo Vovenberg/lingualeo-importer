@@ -6,6 +6,7 @@ dependencies {
     compile project(':importer-common')
 
     compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
     compile "org.apache.httpcomponents:httpclient:${apacheHttpcomponents}"
     compile group: 'org.springframework', name: 'spring-aspects'
 

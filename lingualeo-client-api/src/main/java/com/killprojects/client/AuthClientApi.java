@@ -1,5 +1,6 @@
 package com.killprojects.client;
 
+import com.killprojects.client.dto.User;
 import com.killprojects.common.Result;
 
 /**
@@ -7,6 +8,6 @@ import com.killprojects.common.Result;
  */
 interface AuthClientApi {
 
-    Result<Boolean> auth(String login, String password);
+    Result<User> auth(String login, String password);
 
 }

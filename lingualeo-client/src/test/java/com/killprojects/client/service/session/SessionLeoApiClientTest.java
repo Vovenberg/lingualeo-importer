@@ -1,7 +1,7 @@
 package com.killprojects.client.service.session;
 
 import com.killprojects.client.App;
-import com.killprojects.client.common.HttpPropertyContext;
+import com.killprojects.client.common.contexts.HttpPropertyContext;
 import com.killprojects.client.common.dto.AddWordResponse;
 import com.killprojects.client.common.dto.AuthResponse;
 import com.killprojects.client.common.dto.GetTranslationsResponse;
@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = App.class)
-class SessionLeoApiClientTest {
+public class SessionLeoApiClientTest {
 
 
     @Autowired
@@ -28,7 +28,7 @@ class SessionLeoApiClientTest {
     @DisplayName("simple checking translation word Treasure")
     void successGetWordTranslations() throws InternalSystemException {
         HttpPropertyContext propertyContext = HttpPropertyContext.builder()
-                .setSessionId(10L)
+                .sesionId(10L)
                 .build();
 
         GetTranslationsResponse translationsResponse =
@@ -66,7 +66,7 @@ class SessionLeoApiClientTest {
 
         AddWordResponse response = leoApiClient.addWord("vanish",
                 "werwerw", "sdfsdf", HttpPropertyContext.builder()
-                        .setSessionId(sessionId).build());
+                        .sesionId(sessionId).build());
 
         Assertions.assertAll("check response",
                 () -> assertNotNull(response),
